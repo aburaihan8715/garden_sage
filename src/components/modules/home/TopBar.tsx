@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MdChat, MdNotifications, MdPerson, MdSearch } from "react-icons/md";
 
 export default function TopBar() {
@@ -15,8 +16,15 @@ export default function TopBar() {
       </div>
       <div className="flex-[4] flex items-center justify-around text-white">
         <div className="space-x-4">
-          <span className="cursor-pointer">Homepage</span>
-          <span className="cursor-pointer">Timeline</span>
+          <Link href={`/`} className="cursor-pointer">
+            Homepage
+          </Link>
+          <Link href={`/`} className="cursor-pointer">
+            Timeline
+          </Link>
+          <Link href={`/profile`} className="cursor-pointer">
+            Profile
+          </Link>
         </div>
         <div className="flex space-x-6">
           <div className="relative cursor-pointer">
