@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header>
       {/* DESKTOP NAV */}
-      <div className="fixed top-0 z-20 hidden h-[80px] w-full items-center justify-between bg-orange-50 px-10 lg:flex">
+      <div className="fixed top-0 z-20 hidden h-[80px] w-full items-center justify-between bg-green-50 px-10 lg:flex">
         {/* LOGO */}
         <Link href="/">
           <BrandLogo />

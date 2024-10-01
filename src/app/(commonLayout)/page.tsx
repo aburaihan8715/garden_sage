@@ -1,4 +1,5 @@
 import Tips from '@/components/modules/home/Tips';
+import Gallery from '@/components/ui/Gallery';
 import SectionHeading from '@/components/ui/SectionHeading';
 import React from 'react';
 
@@ -6,7 +7,11 @@ const Home = () => {
   return (
     <div className="mt-[80px] flex h-[calc(100vh-80px)]">
       {/* Left Sidebar */}
-      <div className="fixed h-full w-[25%] bg-red-300">Left</div>
+      <div className="fixed h-full w-[25%] p-5">
+        <div className="h-full">
+          <Gallery />
+        </div>
+      </div>
 
       {/* Center Content */}
       <div className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-track-rounded-full ml-[25%] mr-[25%] h-full w-[50%] overflow-y-scroll scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-500">
@@ -24,7 +29,13 @@ const Home = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className="fixed right-0 h-full w-[25%] bg-red-300">Right</div>
+      <div className="fixed right-0 h-full w-[25%]">
+        <div className="fixed h-full w-[25%] p-5">
+          <div className="h-full">
+            <Gallery />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

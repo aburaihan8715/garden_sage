@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 interface ActiveLinkProps {
   href: string;
   children: ReactNode;
-  className?: string; // Optional className prop
+  className?: string;
 }
 
 const ActiveLink: React.FC<ActiveLinkProps> = ({

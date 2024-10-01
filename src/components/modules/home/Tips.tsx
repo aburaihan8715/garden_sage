@@ -7,9 +7,9 @@ import {
   FaCommentAlt,
   FaShareAlt,
 } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Tips = () => {
-  // Static Data
   const postData = {
     title: 'Top 10 Tips for Growing Tomatoes',
     content:
@@ -24,7 +24,7 @@ const Tips = () => {
       profileImage:
         'https://images.pexels.com/photos/1105019/pexels-photo-1105019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       followers: 3400,
-      isPremiumUser: true, // New field to check if the author is a premium user
+      isPremiumUser: true,
     },
     comments: [
       { _id: '64c8f0e8d5f4c31234abc890', content: 'Thanks for the tips!' },
@@ -38,7 +38,6 @@ const Tips = () => {
       'https://images.pexels.com/photos/1105019/pexels-photo-1105019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   };
 
-  // Share Functionality
   const handleShare = () => {
     if (navigator.share) {
       navigator
@@ -55,9 +54,9 @@ const Tips = () => {
   };
 
   return (
-    <li className="mx-auto mb-6 max-w-4xl rounded-lg border bg-white p-6 shadow-md">
-      {/* Post Image */}
-      <div className="overflow-hidden rounded-lg">
+    <li className="group relative mx-auto mb-6 max-w-4xl rounded-lg border bg-white p-6 shadow-md">
+      {/* Post Image with Hover Overlay */}
+      <div className="relative overflow-hidden rounded-lg">
         <Image
           src={postData.imageUrl}
           alt={postData.title}
@@ -65,14 +64,27 @@ const Tips = () => {
           height={400}
           layout="responsive"
           objectFit="cover"
-          className="rounded-lg"
+          className="rounded-lg transition-transform duration-300 group-hover:scale-105"
         />
+        {/* Overlay with Details Button */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <Link
+            href={`/tips-list/123`}
+            className="rounded-md bg-white px-4 py-2 font-semibold text-gray-900 shadow-md hover:bg-gray-100"
+          >
+            View Details
+          </Link>
+        </div>
       </div>
 
       {/* Category and Premium Badge */}
       <div className="mt-4 flex items-center justify-between">
         <span
-          className={`rounded-full px-3 py-1 text-sm font-medium ${postData.isPremium ? 'bg-yellow-300 text-yellow-900' : 'bg-gray-200 text-gray-800'}`}
+          className={`rounded-full px-3 py-1 text-sm font-medium ${
+            postData.isPremium
+              ? 'bg-yellow-300 text-yellow-900'
+              : 'bg-gray-200 text-gray-800'
+          }`}
         >
           {postData.category}
         </span>
@@ -90,7 +102,6 @@ const Tips = () => {
 
       {/* Author Information */}
       <div className="mt-2 flex items-center text-sm text-gray-500">
-        {/* Profile Image */}
         <div>
           <div className="relative mr-3 h-10 w-10 rounded-full object-cover">
             <Image
@@ -111,7 +122,6 @@ const Tips = () => {
               {new Date(postData.createdAt).toLocaleDateString()}
             </span>
           </div>
-          {/* Followers */}
           <div className="text-xs text-gray-400">
             {postData.author.followers} Followers
             {postData.author.isPremiumUser && (
@@ -130,7 +140,6 @@ const Tips = () => {
 
       {/* Actions */}
       <div className="mt-6 flex items-center justify-between">
-        {/* Upvote/Downvote */}
         <div className="flex items-center space-x-4">
           <button className="flex items-center space-x-1 text-green-500">
             <FaThumbsUp />
@@ -142,7 +151,6 @@ const Tips = () => {
           </button>
         </div>
 
-        {/* Comments */}
         <div className="flex items-center space-x-2">
           <FaCommentAlt className="text-gray-400" />
           <span className="text-gray-500">
@@ -150,7 +158,6 @@ const Tips = () => {
           </span>
         </div>
 
-        {/* Share Button */}
         <button
           onClick={handleShare}
           className="flex items-center space-x-1 text-blue-500 hover:text-blue-600"
