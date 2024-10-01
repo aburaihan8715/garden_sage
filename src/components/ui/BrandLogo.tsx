@@ -1,13 +1,13 @@
-import { MdBook } from "react-icons/md";
+import { FaLeaf } from 'react-icons/fa';
 
 const BrandLogo = () => {
   return (
     <div className="flex items-center gap-1">
       <p className="text-primary">
-        <MdBook />
+        <FaLeaf className="text-2xl text-green-700" />
       </p>
-      <p className="font-semibold text-gray-700 text-2xl bg-gradient-to-r from-blue-700 via-orange-600 to-blue-500 bg-clip-text text-transparent">
-        Meet<span className="text-primary">T</span>Me
+      <p className="bg-gradient-to-r from-green-700 via-yellow-600 to-green-500 bg-clip-text text-2xl font-semibold text-gray-700 text-transparent">
+        GardenSage
       </p>
     </div>
   );

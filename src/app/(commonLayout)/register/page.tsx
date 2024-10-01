@@ -28,7 +28,7 @@ const Register = () => {
   });
 
   return (
-    <div className="flex min-h-screen justify-center bg-gray-50 py-12 sm:px-6 lg:px-8">
+    <div className="mt-[80px] flex min-h-screen justify-center bg-gray-50 py-12 sm:px-6 lg:px-8">
       <motion.div
         className="w-full max-w-md rounded bg-white p-8 shadow"
         initial={{ opacity: 0, y: 20 }}

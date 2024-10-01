@@ -1,4 +1,5 @@
-import Post from '@/components/modules/home/Post';
+import Tips from '@/components/modules/home/Tips';
+import SectionHeading from '@/components/ui/SectionHeading';
 import React from 'react';
 
 const Home = () => {
@@ -9,12 +10,17 @@ const Home = () => {
 
       {/* Center Content */}
       <div className="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-track-rounded-full ml-[25%] mr-[25%] h-full w-[50%] overflow-y-scroll scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-500">
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <div className="mt-10 flex justify-center">
+          <SectionHeading heading="Tips and Advice" />
+        </div>
+        <ul className="space-y-10 md:p-5">
+          <Tips />
+          <Tips />
+          <Tips />
+          <Tips />
+          <Tips />
+          <Tips />
+        </ul>
       </div>
 
       {/* Right Sidebar */}

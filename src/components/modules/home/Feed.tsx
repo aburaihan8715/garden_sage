@@ -1,6 +1,6 @@
-import { Posts } from "@/dev-data/dummyData";
-import Share from "./Share";
-import Post from "./Post";
+import { Posts } from '@/dev-data/dummyData';
+import Share from './Share';
+import Tips from './Tips';
 
 export default function Feed() {
   return (
@@ -8,7 +8,7 @@ export default function Feed() {
       <div className="p-5">
         <Share />
         {Posts.map((p) => (
-          <Post key={p.id} post={p} />
+          <Tips key={p.id} post={p} />
         ))}
       </div>
     </div>
